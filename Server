@@ -1,0 +1,19 @@
+What are the differences between game servers and regular servers?
+
+
+What are the differences between game servers and regular servers?
+
+
+What are the differences between game servers and regular servers?
+Game server is the main place for players to play games. It contains all users'login, rank, equipment and other data information. According to the experience of data Bay server development in Hong Kong, game server should keep more state than ordinary server, and each user exists independently. The specific differences are as follows:
+
+First of all, game servers can save more users'status than ordinary servers. Users' rank and other attributes must be said, general IM services will also have, and there will be some data that will change immediately, such as a player's life value, mana value before and after skill issuance, and so on. These values are different from general ones. The difference between attribute values such as names and IDs is that they change frequently and participate in logical calculations, such as how many levels of player you eat, how much combat power you change, whether you will be dodged by a player with a number of attributes, whether you will generate crits, and so on. Second, every user in the game server is independent, and every user's data and requests are independent. There is no interaction between users'data. This is also the biggest difference between the game server and the ordinary server. As for the interaction between the client, there will be interaction. For the simplest example, if a person says a sentence in a scene, then the player on the same screen needs to be able to see what he says. At this time, the game server needs to determine how far away the player will be identified as the "same screen" player, who needs to broadcast this sentence to these players. Words.
+First of all, we need to calculate which players are on the same screen, which is the calculation we need to do in the first point about some of the constantly changing attributes of the players. Here, we need to find out the players who follow the same screen according to the coordinates of the players, using the concept of AOI. In addition, we find out that these players need to receive this. If there are 10 people in the scene, then a sentence needs to be broadcast to another 9 people at the same time. If there are 100 people and 1000 people, the amount will be larger. So the same hardware configuration server may run Nginx to handle tens of thousands of links at the same time, but For a game server, there are only 1,2,000, because the game server is a CPU-intensive and IO-intensive server type.
+
+In addition, game servers need better data carrying capacity and processing capacity. Ordinary servers are more balanced in all aspects. When looking for game server renters, it is necessary to choose a CPU with excellent performance. Ordinary servers do not need that strong capability.
+PS: Need a cloud server to drop me oh, 24 hours online. Q3416882710
+
+
+
+
+
